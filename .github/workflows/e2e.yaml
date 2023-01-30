@@ -9,7 +9,7 @@ name: e2e
 permissions:
   contents: read
 jobs:
-  kind:
+  docker-compose:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
