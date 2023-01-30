@@ -13,12 +13,11 @@ RUN pip install pre-commit
 RUN pre-commit --version
 
 WORKDIR myproject
-
-COPY .pre-commit-config.yaml .
 COPY cmd cmd
 
 RUN git init
 
+COPY .pre-commit-config.yaml .
 RUN pre-commit autoupdate
 RUN pre-commit migrate-config
 
