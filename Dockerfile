@@ -11,6 +11,9 @@ RUN git config --global user.email "you@example.com";
 RUN git config --global user.name "Your Name"
 RUN pip install pre-commit
 RUN pre-commit --version
+
+WORKDIR myproject
+
 COPY .pre-commit-config.yaml .
 COPY cmd cmd
 
@@ -23,6 +26,6 @@ RUN git add cmd
 
 RUN git commit -am Initial
 RUN go mod init mytest
-# RUN go mod tidy
+RUN go mod tidy
 
-# RUN pre-commit run --all-files
+RUN pre-commit run --all-files
