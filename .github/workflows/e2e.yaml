@@ -15,7 +15,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v5
     - name: Build
-      uses: isbang/compose-action@v2.3.0
+      uses: isbang/compose-action@v2.4.0
       with:
         compose-file: ./docker-compose.yaml
         services: |
